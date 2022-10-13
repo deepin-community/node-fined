@@ -1,0 +1,37 @@
+Source: node-fined
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Paolo Greppi <paolo.greppi@libpf.com>
+Section: javascript
+Testsuite: autopkgtest-pkg-nodejs
+Priority: optional
+Build-Depends: debhelper-compat (= 13)
+ , dh-sequence-nodejs
+ , mocha <!nocheck>
+ , node-expand-tilde <!nocheck>
+ , node-expect.js <!nocheck>
+ , node-for-own <!nocheck>
+ , node-is-plain-object (>= 5~) <!nocheck>
+ , node-isobject <!nocheck>
+ , node-parse-filepath <!nocheck>
+ , node-vinyl <!nocheck>
+Standards-Version: 4.6.0
+Vcs-Browser: https://salsa.debian.org/js-team/node-fined
+Vcs-Git: https://salsa.debian.org/js-team/node-fined.git
+Homepage: https://github.com/js-cli/fined
+Rules-Requires-Root: no
+
+Package: node-fined
+Architecture: all
+Depends: ${misc:Depends}
+ , node-expand-tilde
+ , node-for-own
+ , node-is-plain-object (>= 5~)
+ , node-isobject
+ , node-parse-filepath
+Provides: ${nodejs:Provides}
+Description: Find a file given a declaration of locations
+ Node.js module to find a file given a basename, a list of
+ extensions and a path. The path can be either given directly or
+ as a base directory for finding up.
+ .
+ Node.js is an event-based server-side JavaScript engine.

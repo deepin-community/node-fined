@@ -1,0 +1,765 @@
+Description: Change from expect to expect-js as the former is
+ not yet in Debian
+Forwarded: not-needed
+Author: Paolo Greppi <paolo.greppi@libpf.com>
+Reviewed-By: Xavier Guimard <yadd@debian.org>
+Last-Update: 2020-12-21
+
+--- a/test/index.js
++++ b/test/index.js
+@@ -2,7 +2,7 @@
+ 
+ var os = require('os');
+ var path = require('path');
+-var expect = require('expect');
++var expect = require('expect.js');
+ 
+ var cwd = process.cwd();
+ var isWindows = (os.platform() === 'win32');
+@@ -37,7 +37,7 @@
+ 
+     var result = fined(pathObj, defaultObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+     done();
+   });
+ 
+@@ -56,7 +56,7 @@
+ 
+     var result = fined(pathObj, defaultObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+     done();
+   });
+ 
+@@ -77,7 +77,7 @@
+ 
+     var result = fined(pathObj, defaultObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+     done();
+   });
+ 
+@@ -90,7 +90,7 @@
+ 
+     var result = fined(pathObj, defaultObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+     done();
+   });
+ 
+@@ -103,7 +103,7 @@
+ 
+     var result = fined(pathObj, defaultObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+     done();
+   });
+ 
+@@ -125,7 +125,7 @@
+ 
+     var result = fined(pathObj, defaultObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+     done();
+   });
+ 
+@@ -146,7 +146,7 @@
+ 
+     var result = fined(pathObj, defaultObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+     done();
+   });
+ 
+@@ -164,7 +164,7 @@
+ 
+     var result = fined(pathObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+     done();
+   });
+ 
+@@ -182,7 +182,7 @@
+ 
+     var result = fined(pathObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+     done();
+   });
+ 
+@@ -204,7 +204,7 @@
+ 
+     var result = fined(pathObj, defaultObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+     done();
+   });
+ 
+@@ -226,7 +226,7 @@
+ 
+     var result = fined(pathObj, defaultObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+     done();
+   });
+ 
+@@ -244,7 +244,7 @@
+ 
+     var result = fined(pathObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+     done();
+   });
+ 
+@@ -270,7 +270,7 @@
+ 
+     var result = fined(pathObj, defaultObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+     done();
+   });
+ 
+@@ -292,7 +292,7 @@
+ 
+     var result = fined(pathObj, defaultObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+     done();
+   });
+ 
+@@ -315,7 +315,7 @@
+ 
+     var result = fined(pathObj, defaultObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+     done();
+   });
+ 
+@@ -343,7 +343,7 @@
+ 
+     var result = fined(pathObj, defaultObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+     done();
+   });
+ 
+@@ -371,7 +371,7 @@
+ 
+     var result = fined(pathObj, defaultObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+     done();
+   });
+ 
+@@ -393,7 +393,7 @@
+ 
+     var result = fined(pathObj, defaultObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+     done();
+   });
+ 
+@@ -415,7 +415,7 @@
+ 
+     var result = fined(pathObj, defaultObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+     done();
+   });
+ 
+@@ -437,7 +437,7 @@
+ 
+     var result = fined(pathObj, defaultObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+     done();
+   });
+ });
+@@ -464,7 +464,7 @@
+ 
+     var result = fined(pathObj, defaultObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+     done();
+   });
+ 
+@@ -485,7 +485,7 @@
+ 
+     var result = fined(pathObj, defaultObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+     done();
+   });
+ 
+@@ -508,7 +508,7 @@
+ 
+     var result = fined(pathObj, defaultObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+     done();
+   });
+ 
+@@ -531,7 +531,7 @@
+ 
+     var result = fined(pathObj, defaultObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+     done();
+   });
+ 
+@@ -551,7 +551,7 @@
+ 
+     var result = fined(pathObj, defaultObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+     done();
+   });
+ 
+@@ -574,7 +574,7 @@
+ 
+     var result = fined(pathObj, defaultObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+ 
+     var pathObj2 = {
+       path: new String('test/fixtures/fined'),
+@@ -594,7 +594,7 @@
+ 
+     var result2 = fined(pathObj2, defaultObj2);
+ 
+-    expect(result2).toEqual(expected2);
++    expect(result2).to.eql(expected2);
+     done();
+   });
+ 
+@@ -618,7 +618,7 @@
+ 
+     var result = fined(pathObj, defaultObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+ 
+     // ~/xxx
+     var pathObj2 = {
+@@ -639,7 +639,7 @@
+ 
+     var result2 = fined(pathObj2, defaultObj2);
+ 
+-    expect(result2).toEqual(expected2);
++    expect(result2).to.eql(expected2);
+ 
+     // ~xxx
+     var pathObj3 = {
+@@ -660,7 +660,7 @@
+ 
+     var result3 = fined(pathObj3, defaultObj3);
+ 
+-    expect(result3).toEqual(expected3);
++    expect(result3).to.eql(expected3);
+     done();
+   });
+ 
+@@ -684,7 +684,7 @@
+ 
+     var result = fined(pathObj, defaultObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+ 
+     // ~+/xxx
+     var pathObj2 = {
+@@ -705,7 +705,7 @@
+ 
+     var result2 = fined(pathObj2, defaultObj2);
+ 
+-    expect(result2).toEqual(expected2);
++    expect(result2).to.eql(expected2);
+ 
+     // ~+xxx
+     var pathObj3 = {
+@@ -726,7 +726,7 @@
+ 
+     var result3 = fined(pathObj3, defaultObj3);
+ 
+-    expect(result3).toEqual(expected3);
++    expect(result3).to.eql(expected3);
+     done();
+   });
+ 
+@@ -749,7 +749,7 @@
+ 
+     var result = fined(pathObj, defaultObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+     done();
+   });
+ 
+@@ -778,7 +778,7 @@
+ 
+     var result = fined(pathObj, defaultObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+     done();
+   });
+ });
+@@ -803,7 +803,7 @@
+ 
+     var result = fined(pathObj, defaultObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+     done();
+   });
+ 
+@@ -825,7 +825,7 @@
+ 
+     var result = fined(pathObj, defaultObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+     done();
+   });
+ 
+@@ -847,7 +847,7 @@
+ 
+     var result = fined(pathObj, defaultObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+     done();
+   });
+ 
+@@ -869,7 +869,7 @@
+ 
+     var result = fined(pathObj, defaultObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+ 
+     var pathObj2 = {
+       name: new String('package'),
+@@ -888,7 +888,7 @@
+ 
+     var result2 = fined(pathObj2, defaultObj2);
+ 
+-    expect(result2).toEqual(expected2);
++    expect(result2).to.eql(expected2);
+     done();
+   });
+ 
+@@ -910,7 +910,7 @@
+ 
+     var result = fined(pathObj, defaultObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+     done();
+   });
+ 
+@@ -932,7 +932,7 @@
+ 
+     var result = fined(pathObj, defaultObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+ 
+     var pathObj2 = {
+       name: path.join(userHomeFile.dir, userHomeFile.name),
+@@ -951,7 +951,7 @@
+ 
+     var result2 = fined(pathObj2, defaultObj2);
+ 
+-    expect(result2).toEqual(expected2);
++    expect(result2).to.eql(expected2);
+     done();
+   });
+ 
+@@ -970,7 +970,7 @@
+ 
+     var result = fined(pathObj, defaultObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+     done();
+   });
+ 
+@@ -989,7 +989,7 @@
+ 
+     var result = fined(pathObj, defaultObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+     done();
+   });
+ });
+@@ -1014,7 +1014,7 @@
+ 
+     var result = fined(pathObj, defaultObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+     done();
+   });
+ 
+@@ -1036,7 +1036,7 @@
+ 
+     var result = fined(pathObj, defaultObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+     done();
+   });
+ 
+@@ -1063,7 +1063,7 @@
+ 
+     var result = fined(pathObj, defaultObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+     done();
+   });
+ 
+@@ -1085,7 +1085,7 @@
+ 
+     var result = fined(pathObj, defaultObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+ 
+     var pathObj2 = {
+       extensions: ['.js', '.json'],
+@@ -1104,7 +1104,7 @@
+ 
+     var result2 = fined(pathObj2, defaultObj2);
+ 
+-    expect(result2).toEqual(expected2);
++    expect(result2).to.eql(expected2);
+     done();
+   });
+ 
+@@ -1126,7 +1126,7 @@
+ 
+     var result = fined(pathObj, defaultObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+     done();
+   });
+ 
+@@ -1148,7 +1148,7 @@
+ 
+     var result = fined(pathObj, defaultObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+     done();
+   });
+ 
+@@ -1170,7 +1170,7 @@
+ 
+     var result = fined(pathObj, defaultObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+     done();
+   });
+ 
+@@ -1192,7 +1192,7 @@
+ 
+     var result = fined(pathObj, defaultObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+     done();
+   });
+ 
+@@ -1214,7 +1214,7 @@
+ 
+     var result = fined(pathObj, defaultObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+     done();
+   });
+ 
+@@ -1236,7 +1236,7 @@
+ 
+     var result = fined(pathObj, defaultObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+ 
+     var exts = {};
+     exts[new String('.json')] = 1;
+@@ -1259,7 +1259,7 @@
+ 
+     var result2 = fined(pathObj2, defaultObj2);
+ 
+-    expect(result2).toEqual(expected2);
++    expect(result2).to.eql(expected2);
+     done();
+   });
+ });
+@@ -1284,7 +1284,7 @@
+ 
+     var result = fined(pathObj, defaultObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+     done();
+   });
+ 
+@@ -1306,7 +1306,7 @@
+ 
+     var result = fined(pathObj, defaultObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+ 
+     var pathObj2 = {
+       cwd: 'test/fixtures',
+@@ -1325,7 +1325,7 @@
+ 
+     var result2 = fined(pathObj2, defaultObj2);
+ 
+-    expect(result2).toEqual(expected2);
++    expect(result2).to.eql(expected2);
+     done();
+   });
+ 
+@@ -1347,7 +1347,7 @@
+ 
+     var result = fined(pathObj, defaultObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+     done();
+   });
+ 
+@@ -1369,7 +1369,7 @@
+ 
+     var result = fined(pathObj, defaultObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+     done();
+   });
+ 
+@@ -1391,7 +1391,7 @@
+ 
+     var result = fined(pathObj, defaultObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+     done();
+   });
+ 
+@@ -1413,7 +1413,7 @@
+ 
+     var result = fined(pathObj, defaultObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+     done();
+   });
+ 
+@@ -1435,7 +1435,7 @@
+ 
+     var result = fined(pathObj, defaultObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+     done();
+   });
+ });
+@@ -1461,7 +1461,7 @@
+ 
+     var result = fined(pathObj, defaultObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+     done();
+   });
+ 
+@@ -1484,7 +1484,7 @@
+ 
+     var result = fined(pathObj, defaultObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+     done();
+   });
+ 
+@@ -1507,7 +1507,7 @@
+ 
+     var result = fined(pathObj, defaultObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+     done();
+   });
+ 
+@@ -1527,7 +1527,7 @@
+ 
+     var result = fined(pathObj, defaultObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+     done();
+   });
+ 
+@@ -1556,7 +1556,7 @@
+ 
+     var result = fined(pathObj, defaultObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+     done();
+   });
+ 
+@@ -1579,7 +1579,7 @@
+ 
+     var result = fined(pathObj, defaultObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+     done();
+   });
+ });
+@@ -1601,7 +1601,7 @@
+ 
+     var result = fined(pathObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+ 
+     var pathObj2 = {
+       path: '.',
+@@ -1617,7 +1617,7 @@
+ 
+     var result2 = fined(pathObj2);
+ 
+-    expect(result2).toEqual(expected2);
++    expect(result2).to.eql(expected2);
+     done();
+   });
+ 
+@@ -1636,7 +1636,7 @@
+ 
+     var result = fined(pathObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+ 
+     var pathObj2 = {
+       path: '.',
+@@ -1652,7 +1652,7 @@
+ 
+     var result2 = fined(pathObj2);
+ 
+-    expect(result2).toEqual(expected2);
++    expect(result2).to.eql(expected2);
+     done();
+   });
+ 
+@@ -1668,7 +1668,7 @@
+ 
+     var result = fined(pathObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+ 
+     var pathObj2 = {
+       path: '.',
+@@ -1681,7 +1681,7 @@
+ 
+     var result2 = fined(pathObj2);
+ 
+-    expect(result2).toEqual(expected2);
++    expect(result2).to.eql(expected2);
+     done();
+   });
+ 
+@@ -1701,7 +1701,7 @@
+ 
+     var result = fined(pathObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+ 
+     var pathObj2 = {
+       path: path.basename(symlinkedFiles[1].dir),
+@@ -1718,7 +1718,7 @@
+ 
+     var result2 = fined(pathObj2);
+ 
+-    expect(result2).toEqual(expected2);
++    expect(result2).to.eql(expected2);
+     done();
+   });
+ 
+@@ -1738,7 +1738,7 @@
+ 
+     var result = fined(pathObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+ 
+     var pathObj2 = {
+       path: path.basename(symlinkedFiles[5].dir),
+@@ -1755,7 +1755,7 @@
+ 
+     var result2 = fined(pathObj2);
+ 
+-    expect(result2).toEqual(expected2);
++    expect(result2).to.eql(expected2);
+     done();
+   });
+ 
+@@ -1772,7 +1772,7 @@
+ 
+     var result = fined(pathObj);
+ 
+-    expect(result).toEqual(expected);
++    expect(result).to.eql(expected);
+ 
+     var pathObj2 = {
+       path: path.basename(symlinkedFiles[3].dir),
+@@ -1786,7 +1786,7 @@
+ 
+     var result2 = fined(pathObj2);
+ 
+-    expect(result2).toEqual(expected2);
++    expect(result2).to.eql(expected2);
+     done();
+   });
+ });

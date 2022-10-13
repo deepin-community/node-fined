@@ -1,0 +1,3 @@
+mkdir -p test-home
+HOME=`pwd`/test-home mocha --async-only
+rm -rf test-home

@@ -1,0 +1,16 @@
+Description: fix for node-is-plain-object ≥ 5
+Author: Yadd <yadd@debian.org>
+Forwarded: no
+Last-Update: 2021-11-06
+
+--- a/index.js
++++ b/index.js
+@@ -3,7 +3,7 @@
+ var fs = require('fs');
+ var path = require('path');
+ 
+-var isPlainObject = require('is-plain-object');
++var { isPlainObject } = require('is-plain-object');
+ var pick = require('object.pick');
+ var defaults = require('object.defaults/immutable');
+ var expandTilde = require('expand-tilde');

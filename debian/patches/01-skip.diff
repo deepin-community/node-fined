@@ -1,0 +1,25 @@
+Description: Manually skip windows tests since the this.skip
+ syntax is broken in mocha.
+Bug: https://github.com/mochajs/mocha/issues/1901
+Author: Paolo Greppi <paolo.greppi@libpf.com>
+
+--- a/test/index.js
++++ b/test/index.js
+@@ -753,7 +753,7 @@
+     done();
+   });
+ 
+-  it('ignores `cwd` when `path` has a drive letter (Windows only)', function(done) {
++  it.skip('ignores `cwd` when `path` has a drive letter (Windows only)', function(done) {
+     if (!isWindows) {
+       this.skip();
+       return;
+@@ -1531,7 +1531,7 @@
+     done();
+   });
+ 
+-  it('does not search up the tree if `cwd` has a drive letter (Windows only)', function(done) {
++  it.skip('does not search up the tree if `cwd` has a drive letter (Windows only)', function(done) {
+     if (!isWindows) {
+       this.skip();
+       return;
